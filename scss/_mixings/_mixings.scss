@@ -1,0 +1,134 @@
+@mixin center{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin slice{
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+@mixin after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 50;
+}
+
+@mixin background{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@mixin afterPattern{
+    content: '';
+    position: absolute;
+    width: 100%;
+    z-index: 50;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+@mixin resetSelect{
+    appearance: none;
+    outline: 0;
+    border: 0;
+    box-shadow: none;
+}
+
+@mixin styleBase{
+    width: 100%;
+    position: relative;
+}
+
+@mixin transitionHover{
+    transition: all ease .3s;
+}
+
+@mixin squareImg{
+
+}
+
+/*======================================================================*
+    Mixing Media Query
+*======================================================================*/
+
+@mixin mobile {
+    @media (min-width: 320px){
+        @content;
+    }
+}
+@mixin mobile-l{
+    @media (min-width: 360px){
+        @content;
+    }
+}
+@mixin tablet {
+    @media (min-width: 768px){
+        @content;
+    }
+}
+
+@mixin tablet-xl {
+    @media (min-width: 992px){
+        @content;
+    }
+}
+
+@mixin laptop {
+    @media (min-width: 1200px){
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: 1600px){
+        @content;
+    }
+}
+
+/*======================================================================*
+    Mixing Media Query Personalizado
+*======================================================================*/
+
+@mixin mediaquery($width) {
+    @media (min-width: #{$width}){
+        @content;
+    }
+}
+
+
+/*======================================================================*
+    Tipography
+*======================================================================*/
+
+
+@mixin baskervville-regular {
+    font-family: 'Baskervville-Regular', "BlinkMacSystemFont", "Segoe UI", "Roboto", "Ubuntu", Arial, serif, sans-serif;
+}
+
+@mixin baskervville-italic {
+    font-family: 'Baskervville-Italic', "BlinkMacSystemFont", "Segoe UI", "Roboto", "Ubuntu", Arial, serif, sans-serif;
+}
+
+@mixin roboto-semibold {
+    font-family: 'Roboto-SemiBold', "BlinkMacSystemFont", "Segoe UI", "Roboto", "Ubuntu", Arial, serif, sans-serif;
+}
+
+@mixin roboto-italic {
+    font-family: 'Roboto-Italic', "BlinkMacSystemFont", "Segoe UI", "Roboto", "Ubuntu", Arial, serif, sans-serif;
+}
+
+@mixin roboto-regular{
+    font-family: 'Roboto-Regular', "BlinkMacSystemFont", "Segoe UI", "Roboto", "Ubuntu", Arial, serif, sans-serif;
+}
+
+@mixin roboto-light{
+    font-family: 'Roboto-Light', "BlinkMacSystemFont", "Segoe UI", "Roboto", "Ubuntu", Arial, serif, sans-serif;
+}

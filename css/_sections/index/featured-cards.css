@@ -1,0 +1,22 @@
+/*======================================================================*
+    Mixing Media Query
+*======================================================================*/
+/*======================================================================*
+    Mixing Media Query Personalizado
+*======================================================================*/
+/*== Colores Texto ===*/
+/*== Colores Corporativos ===*/
+.featured-cards__cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.featured-cards__cards .item-card-link a .item-card-link__bkg {
+  aspect-ratio: 0.3;
+}
+.featured-cards__cards .item-card-link a .item-card-link__bkg img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}

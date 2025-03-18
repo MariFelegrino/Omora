@@ -1,0 +1,21 @@
+/*======================================================================*
+    Mixing Media Query
+*======================================================================*/
+/*======================================================================*
+    Mixing Media Query Personalizado
+*======================================================================*/
+/*== Colores Texto ===*/
+/*== Colores Corporativos ===*/
+.presentation-carousel {
+  width: 100%;
+  position: relative;
+}
+.presentation-carousel__carousel .item .item-inner {
+  aspect-ratio: 1;
+}
+.presentation-carousel__carousel .item .item-inner img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}

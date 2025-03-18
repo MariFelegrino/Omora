@@ -1,0 +1,176 @@
+@import "../_mixings/mixings";
+@import "../_variables/variables";
+
+body{
+    background-color: $black-stallion;
+    color: $whispering-smoke;
+
+    &.bkg--beige{
+        background-color: $beige;
+        .owl-nav{
+            button .arrow svg{
+                color: $blue;
+                &:hover{
+                    fill: $border-cta-white;
+                }
+            }
+        }
+        .owl-dots{
+            .owl-dot{    
+                span{
+                    border: 1px solid $blue;
+                }
+                &:hover{
+                    span{
+                        background-color: transparentize($color: $blue, $amount: 0.5);
+                    }
+                }
+                &.active{
+                    span{
+                        background-color: $blue;
+                    }
+                }
+                
+            } 
+        }
+
+        /*=== Botones ===*/
+        .cta{
+            &--secundary{
+                &:hover{
+                    button{
+                        border: 1px solid $blue;
+                        color: $blue;
+                    }
+                }
+            }
+        }
+
+        .block-description{
+            ul, ol{
+                li{
+                    &::marker{
+                        color: $blue;
+                    }
+                }
+            }
+            a{
+                color: $blue;
+                &:hover{
+                    color: transparentize($color: $blue, $amount: 0.25);
+                }
+            }
+        }
+
+ /*Apartir de aquí ir colocando el "&" en caso de que sea la clase por bloques y se borra
+ el "&" de bkg--beige. En caso de que sea general desde el body a partir de aquí no debe de existir el "&" y en la clase de bkg--beige sí*/
+        .featured-cards{
+            .featured-cards__cards{
+                .item-card-link{
+                    a{
+                        &:hover{
+                            color: $blue;;
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+
+    &.bkg--orange{
+        background-color: $soft-red;
+        .owl-nav{
+            button .arrow svg{
+                color: $whispering-smoke;
+                &:hover{
+                    fill: $black-stallion;
+                }
+            }
+        }
+        .owl-dots{
+            .owl-dot{    
+                span{
+                    border: 1px solid $whispering-smoke;
+                }
+                &:hover{
+                    span{
+                        background-color: transparentize($color: $whispering-smoke, $amount: 0.5);
+                    }
+                }
+                &.active{
+                    span{
+                        background-color: $whispering-smoke;
+                    }
+                }
+                
+            } 
+        }
+
+        /*=== Botones ===*/
+        .cta{
+            &--secundary{
+                &:hover{
+                    button{
+                        border: 1px solid $black-stallion;
+                        color: $black-stallion;
+                    }
+                }
+            }
+        }
+
+        .block-description{
+            ul, ol{
+                li{
+                    &::marker{
+                        color: $black-stallion;
+                    }
+                }
+            }
+
+            a{
+                color: $black-stallion;
+                &:hover{
+                    color: transparentize($color: $black-stallion, $amount: 0.25);
+                }
+            }
+        }
+
+ /*Apartir de aquí ir colocando el "&" en caso de que sea la clase por bloques y se borra
+ el "&" de bkg--beige. En caso de que sea general desde el body a partir de aquí no debe de existir el "&" y en la clase de bkg--beige sí*/
+        .featured-cards{
+            .featured-cards__cards{
+                .item-card-link{
+                    a{
+                        &:hover{
+                            color: $black-stallion;
+                        }
+                    }
+                }
+            }
+        }
+        .featured-logos{
+            &__carousel{
+                .owl-dots{
+                    .owl-dot{    
+                        span{
+                            border: 1px solid $soft-red;
+                        }
+                        &:hover{
+                            span{
+                                background-color: transparentize($color: $soft-red, $amount: 0.5);
+                            }
+                        }
+                        &.active{
+                            span{
+                                background-color: $soft-red;
+                            }
+                        }
+                        
+                    } 
+                }
+            }
+        }
+    }
+
+}

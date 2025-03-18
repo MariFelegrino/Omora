@@ -1,0 +1,109 @@
+@import "../_mixings/mixings";
+@import "../_variables/variables";
+
+
+/*=== Título ===*/
+.block-header{
+    margin-bottom: 40px;
+    color: $whispering-smoke;
+    h1,h2,h3,h4,h5,h6{
+        @include slice;
+        @include roboto-light;
+        font-size: 36px;
+        letter-spacing: 0px;
+        line-height: 1;
+        text-transform: uppercase;
+        @include mobile-l{
+            font-size: 38px
+        }
+        @include tablet{
+            font-size: 42px;
+        }
+        
+    }
+    .featured-txt{
+        @include baskervville-regular;
+    }
+}
+.block-subtitle{
+    color: $whispering-smoke;
+    h1,h2,h3,h4,h5,h6,p{
+        @include slice;
+        @include baskervville-italic;
+        font-size: 24px;
+        letter-spacing: 0px;
+        line-height: 1;
+        @include mobile-l{
+            font-size: 28px;
+        }
+        @include tablet{
+            font-size: 26px;
+        }
+    }
+}
+
+/*=== Descripción ===*/
+.block-description{
+    @include slice;
+    @include baskervville-regular;
+    font-size: 22px;
+    letter-spacing: 0px;
+    color: $whispering-smoke;
+    @include mobile-l{
+        font-size: 24px;
+    }
+    @include tablet{
+        font-size: 20px;
+    }
+    p{
+        margin: 1.3rem 0;
+        @include tablet{
+            margin: 1rem 0;
+        }
+    }
+    ul{
+        margin: 1.3rem 0;
+        @include tablet{
+            margin: 1rem 0;
+        }
+
+        li{
+            &::marker{
+                color: $soft-red;
+            }
+        }
+    }
+
+    ol{
+        margin: 1.3rem 0;
+        display: inline-block;
+        @include tablet{
+            margin: 1rem 0;
+        }
+        li{
+            &::marker{
+                color: $soft-red;
+            }
+        }
+    }
+    a{
+        @include transitionHover;
+        color: $soft-red;
+        &:hover{
+            color: transparentize($color: $soft-red, $amount: 0.25);
+        }
+    }
+    &--center{
+        @extend .block-description;
+        @include tablet{
+            ul,ol{
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: center;
+                align-content: center;
+                flex-direction: column;
+            }
+        }
+    }
+}

@@ -1,0 +1,81 @@
+@charset "UTF-8";
+/*======================================================================*
+    Mixing Media Query
+*======================================================================*/
+/*======================================================================*
+    Mixing Media Query Personalizado
+*======================================================================*/
+/*== Colores Texto ===*/
+/*== Colores Corporativos ===*/
+/*== Espacio Restante del Container (Espacios Laterales Laptop) ===*/
+/* $espacio: calc(4.51% + 39.65px); */
+/* Elemento de Galería */
+.item_gallery_img_lg {
+  width: calc((100% - 27px) / 2);
+}
+@media (min-width: 768px) {
+  .item_gallery_img_lg {
+    width: calc((100% - 80px) / 3);
+  }
+}
+@media (min-width: 992px) {
+  .item_gallery_img_lg {
+    width: calc((100% - 120px) / 4);
+  }
+}
+.item_gallery_img_lg .item_gallery_img_thumb {
+  width: 100%;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  padding-bottom: 75.83%;
+}
+.item_gallery_img_lg .item_gallery_img_thumb img {
+  width: 100%;
+  display: block;
+  position: absolute;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: center;
+  object-position: center;
+}
+.item_gallery_img_lg .item_gallery_img_thumb::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  background-color: rgba(5, 21, 27, 0);
+  -webkit-transition: all ease-in-out 0.3s;
+  transition: all ease-in-out 0.3s;
+}
+.item_gallery_img_lg .item_gallery_img_thumb:hover .icon_zoom {
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+.item_gallery_img_lg .item_gallery_img_thumb:hover::after {
+  background-color: #05151b;
+}
+.item_gallery_img_lg .icon_zoom {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: -70%;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+  z-index: 100;
+  -webkit-transition: all ease-in-out 0.3s;
+  transition: all ease-in-out 0.3s;
+  pointer-events: all;
+}
+.item_gallery_img_lg .icon_zoom svg {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
