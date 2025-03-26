@@ -23,10 +23,15 @@ $(document).ready(function(){
         autoplay:true,
         responsive:{
             0:{
-                items:1
+                items:1,
+                stagePadding:15,
             },
             600:{
                 items:3,
+                stagePadding:0,
+            },
+            900:{
+                stagePadding:0,
             }
             
         }

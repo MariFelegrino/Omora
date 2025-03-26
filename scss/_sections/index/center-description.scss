@@ -9,16 +9,17 @@
         flex-direction: column-reverse;
         gap: 16px;
         flex-wrap: wrap;   
-        @include tablet{
+        @include tablet-xl{
             flex-direction: row-reverse;
             align-items: stretch;
         } 
     }
     &__right-side{
         @include styleBase;
-        @include tablet{
-            padding-right: 36px;
+        text-align: center;
+        @include tablet-xl{
             width: calc(((100% - 16px) / 12) * 7);
+            padding-right: 36px;
             padding-top: 75px;
             padding-bottom: 75px;
             display: flex;
@@ -37,12 +38,21 @@
             @include laptop{
                 width: calc(((100vw - #{$espacio}) / 12) * 5);
             }
+            .block-description--center{
+                text-align: left;
+                @include tablet-xl{
+                    text-align: center;
+                }
+            }
         }
     }
     &__left-side{
         @include styleBase;
         padding-bottom: 100%;
         @include tablet{
+            padding-bottom: 70%;
+        }
+        @include tablet-xl{
             width: calc(((100% - 16px) / 12) * 5);
             padding-bottom: 49.16%;
         }
@@ -58,9 +68,12 @@
             right: 0;
             aspect-ratio: 1 / 0.25;
             height: auto;
-            max-height: 150px;
-            background-image: url('../../../assets/corporativo/pattern.svg');
+            max-height: 120px;
+            background-image: url('../assets/corporativo/pattern.svg');
             transform: rotate(180deg);
+            @include tablet-xl{
+                max-height: 150px;
+            }
         }
     }
 }

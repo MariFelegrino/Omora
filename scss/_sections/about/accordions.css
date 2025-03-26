@@ -1,0 +1,203 @@
+@charset "UTF-8";
+/*======================================================================*
+    Mixing Media Query
+*======================================================================*/
+/*======================================================================*
+    Mixing Media Query Personalizado
+*======================================================================*/
+/*======================================================================*
+    Tipography
+*======================================================================*/
+/*== Colores Texto ===*/
+/*== Colores Corporativos ===*/
+/*== Espacio Restante del Container (Espacios Laterales Laptop) ===*/
+/* $espacio: calc(4.51% + 39.65px); */
+/*======================================================================*
+    Mixing Media Query
+*======================================================================*/
+/*======================================================================*
+    Mixing Media Query Personalizado
+*======================================================================*/
+/*======================================================================*
+    Tipography
+*======================================================================*/
+/*== Colores Texto ===*/
+/*== Colores Corporativos ===*/
+/*== Espacio Restante del Container (Espacios Laterales Laptop) ===*/
+/* $espacio: calc(4.51% + 39.65px); */
+/*=== Título ===*/
+.block-header {
+  margin-bottom: 40px;
+  color: #D8D7D3;
+}
+.block-header h1, .block-header h2, .block-header h3, .block-header h4, .block-header h5, .block-header h6 {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-family: "Roboto-Light", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Ubuntu", Arial, serif, sans-serif;
+  font-size: 36px;
+  letter-spacing: 0px;
+  line-height: 1;
+  text-transform: uppercase;
+}
+@media (min-width: 360px) {
+  .block-header h1, .block-header h2, .block-header h3, .block-header h4, .block-header h5, .block-header h6 {
+    font-size: 38px;
+  }
+}
+@media (min-width: 768px) {
+  .block-header h1, .block-header h2, .block-header h3, .block-header h4, .block-header h5, .block-header h6 {
+    font-size: 40px;
+  }
+}
+@media (min-width: 1200px) {
+  .block-header h1, .block-header h2, .block-header h3, .block-header h4, .block-header h5, .block-header h6 {
+    font-size: 42px;
+  }
+}
+.block-header .featured-txt {
+  font-family: "Baskervville-Regular", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Ubuntu", Arial, serif, sans-serif;
+}
+
+.block-subtitle {
+  color: #D8D7D3;
+}
+.block-subtitle h1, .block-subtitle h2, .block-subtitle h3, .block-subtitle h4, .block-subtitle h5, .block-subtitle h6, .block-subtitle p {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-family: "Baskervville-Italic", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Ubuntu", Arial, serif, sans-serif;
+  font-size: 24px;
+  letter-spacing: 0px;
+  line-height: 1;
+}
+@media (min-width: 360px) {
+  .block-subtitle h1, .block-subtitle h2, .block-subtitle h3, .block-subtitle h4, .block-subtitle h5, .block-subtitle h6, .block-subtitle p {
+    font-size: 28px;
+  }
+}
+@media (min-width: 768px) {
+  .block-subtitle h1, .block-subtitle h2, .block-subtitle h3, .block-subtitle h4, .block-subtitle h5, .block-subtitle h6, .block-subtitle p {
+    font-size: 26px;
+  }
+}
+
+/*=== Descripción ===*/
+.block-description, .accordions__accordions .accordion-body, .block-description--center {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-family: "Baskervville-Regular", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Ubuntu", Arial, serif, sans-serif;
+  font-size: 22px;
+  letter-spacing: 0px;
+  color: #D8D7D3;
+}
+@media (min-width: 360px) {
+  .block-description, .accordions__accordions .accordion-body, .block-description--center {
+    font-size: 24px;
+  }
+}
+@media (min-width: 768px) {
+  .block-description, .accordions__accordions .accordion-body, .block-description--center {
+    font-size: 20px;
+  }
+}
+.block-description p, .accordions__accordions .accordion-body p, .block-description--center p {
+  margin: 1.3rem 0;
+}
+@media (min-width: 768px) {
+  .block-description p, .accordions__accordions .accordion-body p, .block-description--center p {
+    margin: 1rem 0;
+  }
+}
+.block-description ul, .accordions__accordions .accordion-body ul, .block-description--center ul {
+  margin: 1.3rem 0;
+}
+@media (min-width: 768px) {
+  .block-description ul, .accordions__accordions .accordion-body ul, .block-description--center ul {
+    margin: 1rem 0;
+  }
+}
+.block-description ul li::marker, .accordions__accordions .accordion-body ul li::marker, .block-description--center ul li::marker {
+  color: #DF6C47;
+}
+.block-description ol, .accordions__accordions .accordion-body ol, .block-description--center ol {
+  margin: 1.3rem 0;
+  display: inline-block;
+}
+@media (min-width: 768px) {
+  .block-description ol, .accordions__accordions .accordion-body ol, .block-description--center ol {
+    margin: 1rem 0;
+  }
+}
+.block-description ol li::marker, .accordions__accordions .accordion-body ol li::marker, .block-description--center ol li::marker {
+  color: #DF6C47;
+}
+.block-description a, .accordions__accordions .accordion-body a, .block-description--center a {
+  transition: all ease 0.3s;
+  color: #DF6C47;
+}
+.block-description a:hover, .accordions__accordions .accordion-body a:hover, .block-description--center a:hover {
+  color: rgba(223, 108, 71, 0.75);
+}
+@media (min-width: 992px) {
+  .block-description--center ul, .block-description--center ol {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+  }
+}
+
+.accordions-inner {
+  width: 83.75%;
+}
+.accordions-inner .block-header {
+  text-align: center;
+}
+.accordions__accordions {
+  margin-top: 74px;
+}
+.accordions__accordions .accordion-item {
+  background-color: transparent;
+  border-bottom: 1px solid #02151B;
+  padding: 34px 0;
+}
+.accordions__accordions .accordion-item:last-child {
+  border-bottom: 1px solid #02151B;
+}
+.accordions__accordions .accordion-item:first-child {
+  border-top: 1px solid #02151B;
+}
+.accordions__accordions .accordion-button {
+  background-color: transparent;
+  font-family: "Baskervville-Italic", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Ubuntu", Arial, serif, sans-serif;
+  color: #F6F8FF;
+  font-size: 24px;
+  letter-spacing: 0px;
+  padding: 16px 0;
+}
+@media (min-width: 360px) {
+  .accordions__accordions .accordion-button {
+    font-size: 26px;
+  }
+}
+@media (min-width: 768px) {
+  .accordions__accordions .accordion-button {
+    font-size: 22px;
+  }
+}
+.accordions__accordions .accordion-button:not(.collapsed) {
+  box-shadow: none;
+}
+.accordions__accordions .accordion-button::after {
+  background-image: url("data:image/svg+xml,%3Csvg width='21' height='13' viewBox='0 0 21 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.5 8.6417L18.9349 -9.68355e-08L21 2.1157L10.5 12.8731L-8.6208e-08 2.1157L2.06508 -8.87892e-07L10.5 8.6417Z' fill='%2302151B'/%3E%3C/svg%3E");
+}
+.accordions__accordions .accordion-button:focus {
+  box-shadow: none;
+}
+.accordions__accordions .accordion-body {
+  padding: 34px 0 16px;
+}/*# sourceMappingURL=accordions.css.map */

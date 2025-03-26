@@ -3,19 +3,34 @@
 
 .presentation-carousel{
     @include styleBase;
+    .container{
+        /* padding-right: 0 !important;
+        @include tablet{
+            --bs-gutter-x: 1.5rem;
+            padding-right: calc(var(--bs-gutter-x)* .5);
+            padding-left: calc(var(--bs-gutter-x)* .5);
+        } */
+    }
     &-inner{
         @include styleBase;
         text-align: center
     }
     &__carousel{
         @include styleBase;
+
+        .owl-stage{
+            padding-left: 0 !important;
+        }
         .item{
             .item-inner{
-                aspect-ratio: 1 / 0.76;
+                aspect-ratio: 0.90;
                 img{
                     width: 100%;
                     height: 100%;
                     object-fit: cover;
+                }
+                @include tablet-xl{
+                    aspect-ratio: 1 / 0.76;
                 }
             }
         }

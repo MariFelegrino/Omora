@@ -1,0 +1,101 @@
+@import "../../_mixings/mixings";
+@import "../../_variables/variables";
+
+.our-offices{
+    &-inner{
+        text-align: center;
+    }
+    &__offices{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        gap: 16px;
+        padding-top: 50px;
+        @include tablet{
+            flex-direction: row;
+            align-items: center;
+        }
+        @include tablet-xl{
+            justify-content: space-between;
+        }
+        .multimedia-element{
+            @include styleBase;
+            @include tablet{
+                width: calc(((100% - 16px) / 12) * 6);
+            }
+            iframe{
+                aspect-ratio: 1;
+                height: 100%;
+                width: 100%;
+                object-fit: contain;
+                @include tablet{
+                    aspect-ratio: 1 / 0.74;
+                }
+            }
+        }
+        
+    }
+    &__list{
+        @include styleBase;
+        @include tablet{
+            width: calc(((100% - 16px) / 12) * 6);
+            align-self: end;
+        }
+        @include tablet-xl{
+            width: calc(((100% - 16px) / 12) * 5);
+        }
+        ul{
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            gap: 24px;
+            li{
+                text-align: left;
+                .item-office{
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    align-items: center;
+                    @include tablet{
+                        align-items: start;
+                    }
+                    &-info{
+                        position: relative;
+                        width: 60%;
+                        padding-right: 16px;
+                        .item-office-ttl{
+                            h3{
+                              @include roboto-light;
+                              color: $whispering-smoke;
+                              font-size: 24px;
+                              letter-spacing: 0px;
+                            }
+                        }
+                        .item-office-subttl{
+                            p{
+                                @include baskervville-regular;
+                                color: $whispering-smoke;
+                                font-size: 16px;
+                                letter-spacing: 0px;
+                                @include mobile-l{
+                                    font-size: 14;
+                                }
+                                @include tablet{
+                                    font-size: 12px;
+                                }
+                            }
+                        }
+                    }
+                    .cta{
+                        position: relative;
+                        text-align: right;
+                        justify-content: flex-end;
+                        width: 40%;
+                    }
+                }
+            }
+        }
+    }
+}

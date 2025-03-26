@@ -1,0 +1,38 @@
+/*======================================================================*
+    Mixing Media Query
+*======================================================================*/
+/*======================================================================*
+    Mixing Media Query Personalizado
+*======================================================================*/
+/*======================================================================*
+    Tipography
+*======================================================================*/
+/*== Colores Texto ===*/
+/*== Colores Corporativos ===*/
+/*== Espacio Restante del Container (Espacios Laterales Laptop) ===*/
+/* $espacio: calc(4.51% + 39.65px); */
+.our-offices__offices {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+@media (min-width: 768px) {
+  .our-offices__offices {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+.our-offices__offices .multimedia-element {
+  width: calc((100% - 16px) / 2);
+}
+.our-offices__offices__list {
+  width: calc((100% - 16px) / 2);
+}

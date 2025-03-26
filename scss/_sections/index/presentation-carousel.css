@@ -1,0 +1,46 @@
+/*======================================================================*
+    Mixing Media Query
+*======================================================================*/
+/*======================================================================*
+    Mixing Media Query Personalizado
+*======================================================================*/
+/*======================================================================*
+    Tipography
+*======================================================================*/
+/*== Colores Texto ===*/
+/*== Colores Corporativos ===*/
+/*== Espacio Restante del Container (Espacios Laterales Laptop) ===*/
+/* $espacio: calc(4.51% + 39.65px); */
+.presentation-carousel {
+  width: 100%;
+  position: relative;
+}
+.presentation-carousel-inner {
+  width: 100%;
+  position: relative;
+  text-align: center;
+}
+.presentation-carousel__carousel {
+  width: 100%;
+  position: relative;
+}
+.presentation-carousel__carousel .item .item-inner {
+  aspect-ratio: 1/0.76;
+}
+.presentation-carousel__carousel .item .item-inner img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.presentation-carousel__cta {
+  padding-top: 35px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}/*# sourceMappingURL=presentation-carousel.css.map */

@@ -1,0 +1,99 @@
+@import "../../_mixings/mixings";
+@import "../../_variables/variables";
+
+.actions-description{
+    &-inner{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 30px;
+        @include tablet-xl{
+            gap: 16px
+        }
+    }
+    &__actions,
+    &__description{
+        @include styleBase;
+        @include tablet-xl{
+            width: calc((100% - 16px) / 2);
+        }
+    }
+    &__actions{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 16px;
+        .item-card{
+            @include styleBase;
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 100%;
+            aspect-ratio: 1;
+            flex-grow: 1;
+            padding: 16px;
+            @include tablet{
+                width: calc((100% - 16px) / 2);
+            }
+            &-info{
+                @include styleBase;
+                display: flex;
+                align-items: flex-start;
+                flex-direction: column;
+                height: 100%;
+                justify-content: flex-end;
+                flex-wrap: wrap;
+                z-index: 100;
+                .superindice-card{
+                    h1,h2,h3,h4,h5,h6,p,span{
+                        @include slice;
+                        @include baskervville-italic;
+                        letter-spacing: 0px;
+                        font-size: 18px;
+                        color: transparentize($color: $white, $amount: 0.40);
+                        @include tablet{
+                            font-size: 16px;
+                        }
+                    }
+                }
+                .ttl-card{
+                    @include styleBase;
+                    h1,h2,h3,h4,h5,h6,p,span{
+                        @include slice;
+                        @include roboto-light;
+                        letter-spacing: 0px;
+                        font-size: 24px;
+                        color: $white;
+                    }
+                }
+                .cta{
+                    margin-top: 8px;
+                }
+            }
+            &::after{
+                @include after;
+                top: calc(0% + 1px);
+                background: -moz-linear-gradient(top, rgba(2,21,27,0) 0%, rgba(2,21,27,0.26) 48%, rgba(2,21,27,1) 92%, rgba(2,21,27,1) 100%);
+                background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(2,21,27,0)), color-stop(48%, rgba(2,21,27,0.26)), color-stop(92%, rgba(2,21,27,1)), color-stop(100%, rgba(2,21,27,1)));
+                background: -webkit-linear-gradient(top, rgba(2,21,27,0) 0%, rgba(2,21,27,0.26) 48%, rgba(2,21,27,1) 92%, rgba(2,21,27,1) 100%);
+                background: -o-linear-gradient(top, rgba(2,21,27,0) 0%, rgba(2,21,27,0.26) 48%, rgba(2,21,27,1) 92%, rgba(2,21,27,1) 100%);
+                background: -ms-linear-gradient(top, rgba(2,21,27,0) 0%, rgba(2,21,27,0.26) 48%, rgba(2,21,27,1) 92%, rgba(2,21,27,1) 100%);
+                background: linear-gradient(to bottom, rgba(2,21,27,0) 0%, rgba(2,21,27,0.26) 48%, rgba(2,21,27,1) 92%, rgba(2,21,27,1) 100%);
+
+            }
+        }
+    }
+    &__description{
+        text-align: center;
+        /* @include tablet-xl{
+            padding: 75px 0;
+        } */
+        .block-description--center{
+            text-align: left;
+            @include tablet-xl{
+                text-align: center;
+            }
+        }
+    }
+}

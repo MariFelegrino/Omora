@@ -1,0 +1,87 @@
+/*======================================================================*
+    Mixing Media Query
+*======================================================================*/
+/*======================================================================*
+    Mixing Media Query Personalizado
+*======================================================================*/
+/*======================================================================*
+    Tipography
+*======================================================================*/
+/*== Colores Texto ===*/
+/*== Colores Corporativos ===*/
+/*== Espacio Restante del Container (Espacios Laterales Laptop) ===*/
+/* $espacio: calc(4.51% + 39.65px); */
+.featured-cards {
+  width: 100%;
+  position: relative;
+}
+.featured-cards-inner {
+  width: 100%;
+  position: relative;
+  text-align: center;
+}
+.featured-cards__cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+.featured-cards__cards .item-card-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-content: center;
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .featured-cards__cards .item-card-link {
+    width: calc((100% - 32px) / 3);
+  }
+}
+@media (min-width: 1200px) {
+  .featured-cards__cards .item-card-link {
+    width: calc((100% - 48px) / 4);
+  }
+}
+.featured-cards__cards .item-card-link a {
+  text-decoration: none;
+  color: #D8D7D3;
+  text-align: center;
+  width: 100%;
+}
+.featured-cards__cards .item-card-link a:hover {
+  color: #DF6C47;
+}
+.featured-cards__cards .item-card-link a .item-card-link__bkg {
+  width: 100%;
+  position: relative;
+  height: 100%;
+  aspect-ratio: 0.954;
+}
+.featured-cards__cards .item-card-link a .item-card-link__bkg img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.featured-cards__cards .item-card-link a p {
+  display: inline-block;
+  padding: 16px;
+  font-family: "Baskervville-Italic", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Ubuntu", Arial, serif, sans-serif;
+  font-size: 24px;
+  letter-spacing: 0px;
+}
+@media (min-width: 360px) {
+  .featured-cards__cards .item-card-link a p {
+    font-size: 28px;
+  }
+}
+@media (min-width: 768px) {
+  .featured-cards__cards .item-card-link a p {
+    font-size: 26px;
+  }
+}/*# sourceMappingURL=featured-cards.css.map */

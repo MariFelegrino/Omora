@@ -1,0 +1,24 @@
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+        * *         Hero Banner
+        * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+        <section class="hero-banner">
+            <div class="hero-banner-container">
+                <div class="hero-banner-header">
+                    <div class="hero-banner-header-inner">
+                        <div class="iso-corporativo">
+                            <img src="/assets/corporativo/Imagotipo.svg" alt="Logotipo">
+                        </div>
+                        <h1>Elegancia & confort</h1>
+                        <p>La Condesa, Mexico City</p>
+                    </div>
+                </div>
+                <div class="hero-banner-header-information">
+                    <div class="hero-banner-header-information-inner">
+                        <h3>Experiencia de hogar, <span>calidad de hotel</span></h3>
+                        <p>Nuestros departamentos están bien equipados diseñados para brindar todas las comodidades del hogar. Ya sea que viaje con amigos, familiares o socios de negocios, nuestro atento personal se asegurará de superar sus expectativas.</p>
+                        <a href="#" class="btn-action-white">CONTÁCTANOS</a>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-banner-bg" style="background-image: url('/assets/background/hero-banner.png');"></div>
+        </section>

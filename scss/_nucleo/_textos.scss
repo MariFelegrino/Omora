@@ -17,12 +17,26 @@
             font-size: 38px
         }
         @include tablet{
-            font-size: 42px;
+            font-size: 40px;
         }
-        
+        @include laptop{
+            font-size: 42px;
+        }    
     }
     .featured-txt{
         @include baskervville-regular;
+    }
+    &--center{
+        @extend .block-header;
+        @include tablet{
+            width: calc(((100vw - #{$espacio}) / 12) * 10);
+            max-width: 100%;
+            position: relative;
+            margin: 0 auto 40px;
+        }
+        @include laptop{
+            width: calc(((100vw - #{$espacio}) / 12) * 8);
+        }
     }
 }
 .block-subtitle{
@@ -95,7 +109,7 @@
     }
     &--center{
         @extend .block-description;
-        @include tablet{
+        @include tablet-xl{
             ul,ol{
                 display: flex;
                 flex-wrap: wrap;
@@ -104,6 +118,18 @@
                 align-content: center;
                 flex-direction: column;
             }
+        }
+    }
+    &--block{
+        @extend .block-description--center;
+        @include baskervville-italic;
+        color: #EEEEEE;
+        margin: 0 auto;
+        @include tablet-xl{
+            width: calc((100% / 12) * 10);
+        }
+        @include laptop{
+            width: calc((100% / 12) * 8);
         }
     }
 }

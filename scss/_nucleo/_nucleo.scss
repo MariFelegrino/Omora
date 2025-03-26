@@ -54,14 +54,52 @@ ul, ol{
 }
 
 /*=== Container ===*/
-.container, .container-lg, .container-md, .container-sm, .container-xl{
+.container, .container-lg, .container-xl{
+    /* padding: 0 16px !important;
+    @include tablet{
+        padding: 0 12px !important;
+    } */
     @include laptop{
-        max-width: calc(95.49% + 24px); //1375px Aprox
+        max-width: calc(95.49% + 32px); //1375px Aprox
     }
 }
+/*=== Container Fluido a partir de Laptop ===*/
+.container-md{
+    @include mediaquery(576px){
+        max-width: 540px;
+    }
+    @include tablet{
+        max-width: 720px;
+    }
+    @include tablet-xl{
+        max-width: 960px;
+    }
+    @include laptop{
+        max-width: 100%;
+        width: 100%;
+    }
+    
+}
+/*=== Container Fluido a partir de Tablet Grande ===*/
+.container-sm{
+    @include tablet-xl{
+        max-width: 100%;
+        width: 100%;
+    }
+}
+
+/* .container, .container-lg, .container-xl, .container-md .container-sm{
+    padding: 0 16px !important;
+    @include tablet{
+        padding: 0 12px !important;
+    }
+} */
+
 /*=== Botones ===*/
 .cta{
-    button{
+    display: inline-flex;
+    button,
+    a{
         background-color: transparent;
         border-style: none;
         padding: 12px 16px;
@@ -81,7 +119,8 @@ ul, ol{
         @include tablet{
             text-align: inherit;
         }
-        button{
+        button,
+        a{
             border: 1px solid $border-cta-white;
             color: $white;
             min-width: 118px;
@@ -89,9 +128,22 @@ ul, ol{
 
         }
         &:hover{
-            button{
+            button,
+            a{
                 border: 1px solid $soft-red;
                 color: $soft-red;
+            }
+        }
+    }
+    &--secundary-block{
+        @extend.cta--secundary;
+        button,
+        a{
+            padding: 15px 18px;
+            font-size: 10px;
+            min-width: 80px;
+            @include tablet{
+                padding: 7px 10px;
             }
         }
     }
@@ -139,7 +191,10 @@ ul, ol{
                 left: 0;
             }
             &.owl-next{
-                right: 0;
+                right: 31px;
+                @include tablet{
+                    right: 0;
+                }
             }
             @include tablet{  
                 &.owl-prev{
@@ -156,6 +211,10 @@ ul, ol{
         display: flex;
         justify-content: center;
         align-items: center; 
+        width: calc(100% - 31px);
+        @include tablet{
+            width: 100%;
+        }
     }
     &.space-btm-lg{
         .owl-stage-outer{
@@ -198,3 +257,5 @@ ul, ol{
         margin-top: 16px;
     }
 }
+
+
