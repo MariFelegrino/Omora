@@ -13,7 +13,9 @@
     }
     &-inner{
         @include styleBase;
-        text-align: center
+        @include tablet{
+            text-align: center;
+        }
     }
     &__carousel{
         @include styleBase;
@@ -23,27 +25,96 @@
         }
         .item{
             .item-inner{
-                aspect-ratio: 0.90;
                 img{
+                    aspect-ratio: 0.984;
                     width: 100%;
                     height: 100%;
                     object-fit: cover;
+                    @include tablet{
+                        aspect-ratio: 1 / 0.76;
+                    }
+                    @include laptop{
+                        height: 326px;
+                    }
+                    @include mediaquery(1440px){
+                        height: 340px;
+                    }
+                    @include desktop{
+                        height: 461px;
+                    }
                 }
-                @include tablet-xl{
-                    aspect-ratio: 1 / 0.76;
+                .presentation-carousel__cta{
+                        display: none;
+                        transition: all ease-in-out .3s;
                 }
+            }
+        }
+        .owl-item.active.center{
+            .item{
+                .item-inner{
+                    .presentation-carousel__cta{
+                        display: flex;
+                    }
+                }
+            }
+        }
+
+        .customControls{
+            margin-top: 30px;
+            @include laptop{
+                position: absolute;
+                z-index: 100;
+                top: 396px; // img + separación ( img + 70px)
+                justify-content: space-between;
+                left: 50%;
+                transform: translateX(-50%);
+                margin-top: 0;
+                
+            }
+            @include mediaquery(1440px){
+                top: 410px;
+            }
+            @include desktop{
+                top: 531px; 
             }
         }
     }
     &__cta{
-        padding-top: 35px;
+        margin-top: 16px;
         text-align: center;
-        display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         align-content: center;
         flex-wrap: wrap;
         gap: 20px;
+        @include tablet{
+            margin-top: 30px;
+        }
+        @include laptop{
+            margin-top: 70px;
+            padding-top: 55px;
+        }
+    }
+    .owl-navsDots--inline{
+        .owl-nav{
+            @include laptop{
+                position: absolute;
+                top: 392px; // img + separación
+            }
+            @include desktop{
+                top: 526px; 
+            }
+        }
+        .owl-dots{
+            @include laptop{
+                position: absolute;
+                top: 392px;
+            }
+            @include desktop{
+                top: 526px;
+            }
+        }
     }
 }
+

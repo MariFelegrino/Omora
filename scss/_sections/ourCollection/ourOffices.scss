@@ -3,17 +3,23 @@
 
 .our-offices{
     &-inner{
-        text-align: center;
+        @include styleBase;
+        text-align: left;
+        @include tablet{
+            text-align: center;
+        }
     }
     &__offices{
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
-        gap: 16px;
-        padding-top: 50px;
+        gap: 23px 16px;
+        margin-top: 55px;
         @include tablet{
             flex-direction: row;
-            align-items: center;
+            /* align-items: center; */
+            margin-top: 70px;
+            align-items: stretch;
         }
         @include tablet-xl{
             justify-content: space-between;
@@ -21,16 +27,17 @@
         .multimedia-element{
             @include styleBase;
             @include tablet{
-                width: calc(((100% - 16px) / 12) * 6);
+                max-width: calc(((100% - 16px) / 12) * 6);
+                flex-grow: 1;
             }
             iframe{
-                aspect-ratio: 1;
+                aspect-ratio: 1 / 0.74;
                 height: 100%;
                 width: 100%;
                 object-fit: contain;
-                @include tablet{
+/*                 @include tablet{
                     aspect-ratio: 1 / 0.74;
-                }
+                } */
             }
         }
         
@@ -40,6 +47,7 @@
         @include tablet{
             width: calc(((100% - 16px) / 12) * 6);
             align-self: end;
+            padding-top: 25px;
         }
         @include tablet-xl{
             width: calc(((100% - 16px) / 12) * 5);
@@ -55,44 +63,64 @@
                 text-align: left;
                 .item-office{
                     display: flex;
-                    flex-direction: row;
+                    flex-direction: column;
                     flex-wrap: wrap;
-                    align-items: center;
+                    align-items: flex-start;
+                    gap: 25px;
                     @include tablet{
                         align-items: start;
+                        flex-direction: row;
+                        align-items: center;
+                        gap: 0;
                     }
                     &-info{
                         position: relative;
-                        width: 60%;
-                        padding-right: 16px;
+                        width: 100%;
+                        @include tablet{
+                            width: 60%;
+                            padding-right: 16px;
+                        }
+                        @include tablet-xl{
+                            flex-grow: 1;
+                        }
                         .item-office-ttl{
                             h3{
                               @include roboto-light;
                               color: $whispering-smoke;
-                              font-size: 24px;
+                              font-size: 20px;
                               letter-spacing: 0px;
+                              @include tablet{
+                                font-size: 24px;
+                              }
                             }
                         }
                         .item-office-subttl{
                             p{
                                 @include baskervville-regular;
                                 color: $whispering-smoke;
-                                font-size: 16px;
+                                /* font-size: 16px; */
+                                font-size: 12px;
                                 letter-spacing: 0px;
-                                @include mobile-l{
+                                /* @include mobile-l{
                                     font-size: 14;
-                                }
-                                @include tablet{
+                                } */
+                                /* @include tablet{
                                     font-size: 12px;
-                                }
+                                } */
                             }
                         }
                     }
                     .cta{
                         position: relative;
-                        text-align: right;
-                        justify-content: flex-end;
-                        width: 40%;
+                        @include tablet{
+                            justify-content: flex-end;
+                            text-align: right;
+                            width: 40%;
+                        }
+                        @include tablet-xl{
+                            width: auto;
+                            max-width: 40%;
+                        }
                     }
                 }
             }

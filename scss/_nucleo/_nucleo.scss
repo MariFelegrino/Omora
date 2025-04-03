@@ -1,17 +1,6 @@
  @import "../_mixings/mixings";
  @import "../_variables/variables";
 
-section{
-    margin: 100px 0;
-    @include laptop{
-        min-height: 100vh;
-        display: flex;
-        align-items: center;
-        margin: 0;
-        vertical-align: baseline;
-        padding: 90px 0;
-    }
-}
 /*=== Reset ===*/
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -49,6 +38,18 @@ a{
 ul, ol{
     margin-bottom: 0;
 }
+
+.section-view-vh{
+    margin: 100px 0;
+    @include laptop{
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        margin: 0;
+        vertical-align: baseline;
+        padding: 90px 0;
+    }
+}
 :focus-visible {
     outline: none;
 }
@@ -60,7 +61,7 @@ ul, ol{
         padding: 0 12px !important;
     } */
     @include laptop{
-        max-width: calc(95.49% + 32px); //1375px Aprox
+        max-width: calc(96.53% + 32px); //1375px Aprox
     }
 }
 /*=== Container Fluido a partir de Laptop ===*/
@@ -97,27 +98,25 @@ ul, ol{
 
 /*=== Botones ===*/
 .cta{
-    display: inline-flex;
+
     button,
     a{
+        display: inline-block;
         background-color: transparent;
         border-style: none;
         padding: 12px 16px;
         @include roboto-regular;
-        font-size: 14px;
+        font-size: 12px;
         letter-spacing: 0;
         text-transform: uppercase;
-        @include mobile-l{
-            font-size: 16px;
-        }
-        @include tablet{
-            font-size: 12px;
-        }
+        /* @include mobile-l{
+            font-size: 14px;
+        } */
     }
     &--secundary{
-        text-align: center;
+        text-align: left;
         @include tablet{
-            text-align: inherit;
+            text-align: center;
         }
         button,
         a{
@@ -139,12 +138,13 @@ ul, ol{
         @extend.cta--secundary;
         button,
         a{
-            padding: 15px 18px;
+            /* padding: 15px 18px; */
+            padding: 7px 10px;
             font-size: 10px;
             min-width: 80px;
-            @include tablet{
+            /* @include tablet{
                 padding: 7px 10px;
-            }
+            } */
         }
     }
     &.margin-top-btn{
@@ -160,8 +160,13 @@ ul, ol{
     .owl-nav{
         display: flex;
         justify-content: space-between;
-        width: 100%;
+        /* width: 100%; */
+        width: calc(100% - 31px);
+        position: relative;
         margin-top: 0;
+        @include tablet{
+            width: 100%;
+        }
         [class*=owl-] {
             margin: 0;
             &:hover{
@@ -170,12 +175,20 @@ ul, ol{
         }
         button{
             position: absolute;
+            transform: translateY(50%);
+            @include tablet{
+                transform: translateY(21%);
+            }
             .arrow{
-                width: 25px;
-                height: 25px;
+                width: 12px;
+                height: 12px;
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                @include tablet{
+                    width: 20px;
+                    height: 20px;
+                }
                 svg{
                     height: 90%;
                     width: 90%;
@@ -188,12 +201,22 @@ ul, ol{
                 }
             }
             &.owl-prev{
-                left: 0;
+                /* left: 0; */
+                left: 35px;
             }
             &.owl-next{
-                right: 31px;
-                @include tablet{
+               /*  right: 31px; */
+               right: 35px;
+                /* @include tablet{
                     right: 0;
+                } */
+            }
+            @include mobile-l{  
+                &.owl-prev{
+                    left: 55px;
+                }
+                &.owl-next{
+                    right: 55px;
                 }
             }
             @include tablet{  
@@ -212,16 +235,24 @@ ul, ol{
         justify-content: center;
         align-items: center; 
         width: calc(100% - 31px);
+        /* margin: 0 auto; */
         @include tablet{
             width: 100%;
+        }
+        .owl-dot{
+            span{
+                height: 8px;
+                width: 8px;
+                margin: 0px 2px;
+            }
         }
     }
     &.space-btm-lg{
         .owl-stage-outer{
             margin-bottom: 30px;
-            @include tablet{
+            /* @include tablet{
                 margin-bottom: 60px;
-            }
+            } */
         }
     }
     &.space-btm-regular{
@@ -258,4 +289,118 @@ ul, ol{
     }
 }
 
+.customControls{
+    @extend.customControlsInline;
+    width: calc(100% - 16px); //100% - 31PX
+    @include tablet{
+        min-width: calc((100% / 3) - 30px);
+    }
+}
+.customControlsCards{
+    @extend.customControlsInline;
+    margin-top: 30px;
+    width: calc(100% - 16px);
+    @include tablet{
+        width: 100%;
+    }
+}
 
+
+.customControlsInline {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    /* gap: 10px; */
+    gap: 40px;
+    position: relative;
+    @include tablet{
+        width: auto;
+        max-width: 100%;
+    }
+    &.disabled{
+        display: none;
+    }
+  
+  .customDots,
+  .customDotsCards {
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+  }
+  .owl-dot {
+    display: flex;
+    border-radius: 50%;
+    height: 8px;
+    width: 8px;
+    padding: 0;
+    border: none;
+    background: none;
+    border: 1px solid $soft-red;
+    box-sizing: content-box;
+    @include transitionHover;
+    align-items: center;
+    justify-content: center;
+    &:hover{
+        background: none;
+        background-color: transparentize($color: $soft-red, $amount: 0.5);
+    }
+    &.active{
+        background-color: $soft-red;
+    }
+  }
+
+  .owl-prev, 
+  .owl-next{
+    background: none;
+    border: none;
+    width: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 0;
+    @include tablet{
+        width: 20px;
+    }
+    .arrow{
+        width: 12px;
+        height: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include tablet{
+            width: 20px;
+            height: 20px;
+        }
+        svg{
+            height: 90%;
+            width: 90%;
+            object-fit: contain;
+            @include transitionHover;
+            color: $soft-red;
+            &:hover{
+                fill: $border-cta-white;
+            }
+        }
+    }
+  }
+  
+}
+
+/* 
+  .owl-dot.active {
+    background-color: black;
+  } */
+
+/*   .owl-prev, .owl-next {
+    background: black;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 18px;
+  } */

@@ -1,6 +1,16 @@
 @import "../../_mixings/mixings";
 @import "../../_variables/variables";
 
+.text-size{
+    font-size: 20px;
+    /* font-size: 22px;
+    @include mobile-l{
+        font-size: 24px;
+    }
+    @include tablet{
+        font-size: 20px;
+    } */
+}
 /*select*/
 .select_select{
     position: relative;
@@ -14,20 +24,14 @@
         background-color: transparent;
         outline: none;
         @include baskervville-regular;
-        font-size: 22px;
+        @extend.text-size;
         letter-spacing: 0px;
-        color: transparentize($color: $whispering-smoke, $amount: 0.30);
+        color: transparentize($color: $whispering-smoke, $amount: 0.40);
         /* padding: 23px 30px 23px 20px; */
         width: 100%;
         display: inline-block;
         position: relative;
         transition: all ease-in-out .3s;
-        @include mobile-l{
-            font-size: 24px;
-        }
-        @include tablet{
-            font-size: 20px;
-        }
     }
     i{
         position: absolute;
@@ -79,13 +83,19 @@
 .form-block{
     &-inner{
         @include styleBase;
-        text-align: center;
+        text-align: left;
+        @include tablet{
+            text-align: center;
+        }
         @include tablet-xl{
             width: 83.75%;
         }
     }
     &__form{
-        padding-top: 25px;
+        /* padding-top: 25px; */
+        @include tablet{
+            padding-top: 25px; 
+        }
         .form-columns{
             display: -webkit-box;
             display: -ms-flexbox;
@@ -120,18 +130,13 @@
             @include styleBase;
             @include baskervville-regular;
             @include slice;   
-            font-size: 22px;
+            @extend.text-size;
             letter-spacing: 0px;
             color: $whispering-smoke;
             margin-bottom: 0px;
             padding-bottom: 11px;
             text-align: left;
-            @include mobile-l{
-                font-size: 24px;
-            }
-            @include tablet{
-                font-size: 20px;
-            }
+            text-transform: uppercase;
         }
         input,
         textarea{
@@ -141,7 +146,7 @@
             color: $whispering-smoke;
             @include baskervville-regular;
             @include slice;   
-            font-size: 22px;
+            @extend.text-size;
             letter-spacing: 0px;
             border-top: none;
             border-left: none;
@@ -151,14 +156,8 @@
             background: transparent;
             outline: none;
             padding: 5px 16px;
-            @include mobile-l{
-                font-size: 24px;
-            }
-            @include tablet{
-                font-size: 20px;
-            }
             &::placeholder{
-                color: transparentize($color: $whispering-smoke, $amount: 0.30);
+                color: transparentize($color: $whispering-smoke, $amount: 0.40);
             }
             &:focus, &:focus-visible{
                 outline: 0;
@@ -172,30 +171,79 @@
             resize: none;
         }
 
-        input[type=date]::-webkit-calendar-picker-indicator{
-              background-image: url("data:image/svg+xml,%3Csvg viewBox='-1 0 32 32' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:sketch='http://www.bohemiancoding.com/sketch/ns' fill='%23191927' stroke='%23191927'%3E%3Cg id='SVGRepo_bgCarrier' stroke-width='0'%3E%3C/g%3E%3Cg id='SVGRepo_tracerCarrier' stroke-linecap='round' stroke-linejoin='round'%3E%3C/g%3E%3Cg id='SVGRepo_iconCarrier'%3E%3Ctitle%3Ecalendar%3C/title%3E%3Cdesc%3ECreated with Sketch Beta.%3C/desc%3E%3Cdefs%3E%3C/defs%3E%3Cg id='Page-1' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' sketch:type='MSPage'%3E%3Cg id='Icon-Set' sketch:type='MSLayerGroup' transform='translate(-309.000000, -359.000000)' fill='%23191927'%3E%3Cpath d='M323,383 L325,383 L325,385 L323,385 L323,383 Z M323,387 L325,387 C326.104,387 327,386.104 327,385 L327,383 C327,381.896 326.104,381 325,381 L323,381 C321.896,381 321,381.896 321,383 L321,385 C321,386.104 321.896,387 323,387 L323,387 Z M315,383 L317,383 L317,385 L315,385 L315,383 Z M315,387 L317,387 C318.104,387 319,386.104 319,385 L319,383 C319,381.896 318.104,381 317,381 L315,381 C313.896,381 313,381.896 313,383 L313,385 C313,386.104 313.896,387 315,387 L315,387 Z M323,375 L325,375 L325,377 L323,377 L323,375 Z M323,379 L325,379 C326.104,379 327,378.104 327,377 L327,375 C327,373.896 326.104,373 325,373 L323,373 C321.896,373 321,373.896 321,375 L321,377 C321,378.104 321.896,379 323,379 L323,379 Z M315,375 L317,375 L317,377 L315,377 L315,375 Z M315,379 L317,379 C318.104,379 319,378.104 319,377 L319,375 C319,373.896 318.104,373 317,373 L315,373 C313.896,373 313,373.896 313,375 L313,377 C313,378.104 313.896,379 315,379 L315,379 Z M337,367 L311,367 L311,365 C311,363.896 311.896,363 313,363 L317,363 L317,364 C317,364.553 317.447,365 318,365 C318.553,365 319,364.553 319,364 L319,363 L329,363 L329,364 C329,364.553 329.447,365 330,365 C330.553,365 331,364.553 331,364 L331,363 L335,363 C336.104,363 337,363.896 337,365 L337,367 L337,367 Z M337,387 C337,388.104 336.104,389 335,389 L313,389 C311.896,389 311,388.104 311,387 L311,369 L337,369 L337,387 L337,387 Z M335,361 L331,361 L331,360 C331,359.448 330.553,359 330,359 C329.447,359 329,359.448 329,360 L329,361 L319,361 L319,360 C319,359.448 318.553,359 318,359 C317.447,359 317,359.448 317,360 L317,361 L313,361 C310.791,361 309,362.791 309,365 L309,387 C309,389.209 310.791,391 313,391 L335,391 C337.209,391 339,389.209 339,387 L339,365 C339,362.791 337.209,361 335,361 L335,361 Z M331,375 L333,375 L333,377 L331,377 L331,375 Z M331,379 L333,379 C334.104,379 335,378.104 335,377 L335,375 C335,373.896 334.104,373 333,373 L331,373 C329.896,373 329,373.896 329,375 L329,377 C329,378.104 329.896,379 331,379 L331,379 Z M331,383 L333,383 L333,385 L331,385 L331,383 Z M331,387 L333,387 C334.104,387 335,386.104 335,385 L335,383 C335,381.896 334.104,381 333,381 L331,381 C329.896,381 329,381.896 329,383 L329,385 C329,386.104 329.896,387 331,387 L331,387 Z' id='calendar' sketch:type='MSShapeGroup'%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-              background-size: 25px;
-              background-repeat: no-repeat;
-              padding: 10px 15px;
-              background-position: right 2px center;
-              @include tablet{
-                background-size: 30px;
-                background-position: left 0px center;
-                transform: translateX(5px);
-              }
+        /* input[type="time"]::-webkit-calendar-picker-indicator{       
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 64 64' xmlns='http://www.w3.org/2000/svg' stroke-width='3' stroke='%23004659' fill='none'%3E%3Ccircle cx='32' cy='32' r='25.3'/%3E%3Cpolyline points='32 11.88 32 32.77 43.22 41.38'/%3E%3C/svg%3E");
+            background-size: 25px;
+            background-repeat: no-repeat;
+            padding: 10px 15px;
+            background-position: right 2px center;
+            @include tablet{
+            background-size: 30px;
+            background-position: left 0px center;
+            transform: translateX(5px);
+            }
         }
 
-        input[type="number"]::-webkit-outer-spin-button,
-        input[type="number"]::-webkit-inner-spin-button {
+        input[type="time"]::-webkit-outer-spin-button,
+        input[type="time"]::-webkit-inner-spin-button {
         -webkit-appearance: none;
+        } */
+        .form-control:focus {
+            background-color: transparent;
         }
-
+        .input-group-text {
+            /* height: 100%; */
+            background-color: transparent;
+            border: none;
+            border-radius: 0;
+            position: absolute;
+            top: 50%;
+            right: 16px;
+            transform: translateY(22.5%);
+            z-index: 100;
+            padding: 0;
+            cursor: pointer;
+            /* pointer-events: none;
+            @include laptop{
+                pointer-events: all;
+            } */
+            svg{
+                width: 25px;
+                height: 25px;
+                /* @include tablet{
+                    width: 30px;
+                    height: 30px;
+                } */
+            }
+        }
+        .bootstrap-datetimepicker-widget.dropdown-menu .timepicker-picker table td button {
+            background-color: $black-stallion;
+            border-color: $black-stallion;
+            color: $whispering-smoke;
+            @include slice;
+            @include baskervville-regular;
+            font-weight: bold;
+            font-size: 1.2em;
+          }
+          .dropdown-menu {
+            background-color: $blue;
+            color: $whispering-smoke;
+          }
+          .dropdown-menu .btn{
+            color: $whispering-smoke;
+          }
+          .bootstrap-datetimepicker-widget.dropdown-menu.bottom:after{
+            border-bottom: 6px solid $blue;
+          }
+          .bootstrap-datetimepicker-widget table td span:hover{
+            background: $black-stallion;
+          }
         select{
             border-top: none;
             border-left: none;
             border-right: none;
             border-bottom: 1px solid $blue;
-            color: $whispering-smoke;
+            color: transparentize($color: $whispering-smoke, $amount: 0.40);
             padding: 5px 16px;
         }
 
@@ -205,12 +253,15 @@
         @include styleBase;
         display: inline-flex;
         .form-check-input[type=checkbox]{
-            width: 20px;
-            height: 20px;
+            width: 21px;
+            height: 21px;
             border: 1px solid $blue;
             border-radius: 0 !important;
-            margin-right: 10px;
+            margin-right: 17px;
             background-color: transparent;
+            @include tablet{
+                margin-right: 10px;
+            }
 
         }
         .form-check-input:checked {
@@ -224,7 +275,7 @@
             position: relative;
             @include baskervville-regular;
             @include slice;   
-            font-size: 22px;
+            @extend.text-size;
             letter-spacing: 0px;
             color: $whispering-smoke;
             margin-bottom: 0px;
@@ -236,12 +287,6 @@
                 &:hover{
                     color: $soft-red;
                 }
-            }
-            @include mobile-l{
-                font-size: 24px;
-            }
-            @include tablet{
-                font-size: 20px;
             }
         }
     }
